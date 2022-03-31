@@ -3,6 +3,7 @@ import Entities.*;
 import java.util.Random;
 
 public class MineField {
+
 	private Entity[][] field;
 
 	public MineField() {
@@ -30,6 +31,10 @@ public class MineField {
 				}
 			}
 		}
+	}
+
+	public Entity[][] getField() {
+		return field;
 	}
 
 
