@@ -1,3 +1,5 @@
+package Entities;
+
 import java.util.Random;
 
 public class Lycoperdon extends AliveEntity{

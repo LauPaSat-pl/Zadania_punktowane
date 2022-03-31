@@ -1,9 +1,11 @@
+package Entities;
+
 import java.util.Random;
 
 public class AntiTankMine extends Mine {
 	private double explosiveMass;
 
-	public AntiTankMine(double explosiveMass) {
+	public AntiTankMine() {
 		super();
 		this.explosiveMass = 1.5 + new Random().nextDouble();
 

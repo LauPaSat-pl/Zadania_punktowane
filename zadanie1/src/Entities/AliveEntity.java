@@ -1,3 +1,5 @@
+package Entities;
+
 public abstract class AliveEntity extends Entity{
 	private double height;
 
