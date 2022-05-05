@@ -4,18 +4,18 @@ import PocketItems.PocketItem;
 
 import java.util.*;
 
-public class LaundryMachine {
+public class LaundryMachine <T> {
 	private final HashSet<Cloth> toWash;
 	private LinkedHashSet<Cloth> washed;
 	private final HashMap<Cloth, LinkedList<PocketItem>> pocketItems;
-//	private T certificate;
+	private T certificate;
 
 
 	public LaundryMachine() {
 		toWash = new HashSet<>();
 		washed = new LinkedHashSet<>();
 		pocketItems = new HashMap<>();
-//		certificate = (T) new Certificate();
+		certificate = (T) new Certificate();
 	}
 
 	public void putToWash(Cloth cloth) {
@@ -55,8 +55,8 @@ public class LaundryMachine {
 		pocketItems.remove(cloth);
 		return temp;
 	}
-//	public T retrieveCertificate(){
-//		System.out.println(certificate);
-//		return certificate;
-//	}
+	public T retrieveCertificate() {
+		System.out.println(certificate);
+		return certificate;
+	}
 }

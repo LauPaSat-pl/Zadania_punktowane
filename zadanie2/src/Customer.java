@@ -24,5 +24,7 @@ public class Customer {
 			laundryMachine.getPocketStuffByClothes(cloth);
 		}
 
+		laundryMachine.retrieveCertificate();
+
 	}
 }
