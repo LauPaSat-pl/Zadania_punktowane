@@ -7,12 +7,12 @@ public class World {
 		customers = new ArrayList<>();
 	}
 
-	public void goLive(){
+	public void goLive() {
 		LaundryMachine laundryMachine = new LaundryMachine();
-		for (int i = 0;i<10;i++){
+		for (int i = 0; i < 10; i++) {
 			customers.add(new Customer(laundryMachine));
 		}
-		for (Customer customer:customers){
+		for (Customer customer : customers) {
 			customer.doJob();
 		}
 	}

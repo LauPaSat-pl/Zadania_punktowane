@@ -5,13 +5,13 @@ import java.util.Random;
 public class AddressSheet extends PocketItem {
 
 
-	private String street;
-	private int houseNumber;
+	private final String street;
+	private final int houseNumber;
 
 
 	public AddressSheet(String street) {
 		this.street = street;
-		this.houseNumber = 1+new Random().nextInt(222);
+		this.houseNumber = 1 + new Random().nextInt(222);
 	}
 
 	@Override

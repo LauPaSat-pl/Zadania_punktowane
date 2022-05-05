@@ -10,9 +10,13 @@ public class Shirt extends ClothWithSize {
 
 	public Shirt() {
 		super();
-		for(int i=0;i<6;i++){
+		buttons = new LinkedHashSet<>();
+		for (int i = 0; i < 6; i++) {
 			buttons.add(new Button());
 		}
+
+
+
 		int size = 35 + new Random().nextInt(6);
 		this.setSize(size);
 	}

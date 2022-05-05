@@ -1,6 +1,6 @@
 package Cloths;
 
-public abstract class ClothWithSize extends Cloth{
+public abstract class ClothWithSize extends Cloth {
 	private int size;
 
 	public ClothWithSize() {

@@ -3,7 +3,7 @@ package PocketItems;
 public class Button extends PocketItem {
 
 	private static int buttonCounter = 0;
-	private int id;
+	private final int id;
 
 
 	public Button() {

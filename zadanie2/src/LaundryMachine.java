@@ -2,20 +2,20 @@ import Cloths.Cloth;
 import PocketItems.Grenade;
 import PocketItems.PocketItem;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.LinkedList;
+import java.util.*;
 
 public class LaundryMachine {
-	private HashSet<Cloth> toWash;
+	private final HashSet<Cloth> toWash;
 	private LinkedHashSet<Cloth> washed;
-	private HashMap<Cloth, LinkedList<PocketItem>> pocketItems;
+	private final HashMap<Cloth, LinkedList<PocketItem>> pocketItems;
+//	private T certificate;
+
 
 	public LaundryMachine() {
 		toWash = new HashSet<>();
 		washed = new LinkedHashSet<>();
 		pocketItems = new HashMap<>();
+//		certificate = (T) new Certificate();
 	}
 
 	public void putToWash(Cloth cloth) {
@@ -24,16 +24,21 @@ public class LaundryMachine {
 
 	public void washAll() {
 		LinkedList<PocketItem> pocket;
-		for (Cloth cloth : toWash) {
+		for (Iterator<Cloth> it = toWash.iterator(); it.hasNext();) {
+			Cloth cloth = it.next();
 			pocket = cloth.getPocket();
 			pocketItems.put(cloth, pocket);
 			for (PocketItem pocketItem : pocket) {
+				System.out.println("You forgot something");
 				if (pocketItem instanceof Grenade) {
-					return;
+					if (((Grenade) pocketItem).isUnlocked()) {
+						System.out.println("You wanted to kill us?!?!?!?!?!?!?!?!?!?!!?!?!");
+						return;
+					}
 				}
 			}
 			cloth.setClean(true);
-			toWash.remove(cloth);
+			it.remove();
 			washed.add(cloth);
 		}
 
@@ -44,10 +49,14 @@ public class LaundryMachine {
 		washed = new LinkedHashSet<>();
 		return temp;
 	}
-	public LinkedList<PocketItem> getPocketStuffByClothes(Cloth cloth){
+
+	public LinkedList<PocketItem> getPocketStuffByClothes(Cloth cloth) {
 		LinkedList<PocketItem> temp = pocketItems.get(cloth);
 		pocketItems.remove(cloth);
 		return temp;
 	}
-
+//	public T retrieveCertificate(){
+//		System.out.println(certificate);
+//		return certificate;
+//	}
 }
