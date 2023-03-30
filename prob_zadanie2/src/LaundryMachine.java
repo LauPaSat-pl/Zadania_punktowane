@@ -29,10 +29,9 @@ public class LaundryMachine <T> {
 			pocket = cloth.getPocket();
 			pocketItems.put(cloth, pocket);
 			for (PocketItem pocketItem : pocket) {
-				System.out.println("You forgot something");
 				if (pocketItem instanceof Grenade) {
 					if (((Grenade) pocketItem).isUnlocked()) {
-						System.out.println("You wanted to kill us?!?!?!?!?!?!?!?!?!?!!?!?!");
+						System.out.println("You wanted to kill us?!?!?!?!?!?!?!?!?!?!!?!?!\nThere was a booby trap in your pocket");
 						return;
 					}
 				}
